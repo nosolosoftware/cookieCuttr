@@ -3,18 +3,16 @@ CookieCuttr
 
 A tailorable jQuery plugin to deal with the EU Cookie Law.
 
-**We're not accepting any more pull requests, someone else is working on a new version at the moment, when its ready, we'll link it here.**
-
 Dependencies
 ------------
 
 * [jQuery](https://github.com/jquery/jquery)
-* [jQuery.cookie](https://github.com/carhartl/jquery-cookie)
+* [js-cookie](https://github.com/js-cookie/js-cookie)
 
 Useage
 ------
 
-Add `jquery.cookiecuttr.js`, after jQuery and jQuery.cookie, and `cookiecuttr.css` to the head of your HTML document. Then call CookieCuttr on document ready.
+Add `jquery.cookiecuttr.js`, after jQuery and js-cookie, and `cookiecuttr.css` to the head of your HTML document. Then call CookieCuttr on document ready.
 
 ```javascript
 $(document).ready(function () {
@@ -25,7 +23,7 @@ $(document).ready(function () {
 For any JavaScript you want to disable, you need to wrap the following if statement around it.
 
 ```javascript
-if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
+if (Cookies.get('cc_cookie_accept') == "cc_cookie_accept") {
   // insert the code you do not want to run UNTIL cookies are accepted here
 }
 ```
@@ -34,7 +32,7 @@ Example with Google Analytics
 -----------------------------
 
 ```javascript
-if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
+if (Cookies.get('cc_cookie_accept') == "cc_cookie_accept") {
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
   _gaq.push(['_trackPageview']);
@@ -50,7 +48,7 @@ if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
 Alternatively, you can do the following until cookies are declined.
 
 ```javascript
-if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
+if (Cookies.get('cc_cookie_decline') == "cc_cookie_decline") {
   // do nothing
 } else {
   var _gaq = _gaq || [];
@@ -105,6 +103,7 @@ Credits
 
 * [weare2ndfloor](https://github.com/weare2ndfloor) for the plugin
 * [unsymbol](https://github.com/unsymbol) for organising the implementation txt into a readme markdown file
+* [rediris](https://github.com/rediris) for adding js-cookie dependency & adding bower.json file
 
 Copyright
 ---------
